@@ -1,0 +1,27 @@
+.Sidebar {
+  width: 200px;
+  background-color: lightblue;
+  padding-left: 20px;
+  flex: 200px 0 0;
+}
+
+.items_wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+@media (max-width: 640px) {
+  .Sidebar {
+    width: 100%;
+    flex-direction: column;
+    flex: 100px 0 0;
+  }
+
+  .items_wrapper {
+    flex-direction: row;
+    column-gap: 10px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}

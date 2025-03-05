@@ -1,0 +1,10 @@
+.page_wrapper {
+  min-height: 100vh;
+  display: flex;
+}
+
+@media (max-width: 640px) {
+  .page_wrapper {
+    flex-direction: column;
+  }
+}
