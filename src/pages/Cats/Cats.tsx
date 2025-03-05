@@ -4,15 +4,19 @@ import { getCats } from "../../store/services/getCats/getCats";
 import { setLimit } from "../../store/slices/mainSlice";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import styles from "./Cats.module.scss";
+import { selectLoading } from "../../store/selectors/selectLoading";
+import { selectError } from "../../store/selectors/selectError";
+import { selectCats } from "../../store/selectors/selectCats";
+import { selectPage } from "../../store/selectors/selectPage";
 
 export const Cats = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const cats = useAppSelector((state) => state.main.cats);
-  const loading = useAppSelector((state) => state.main.loading);
-  const error = useAppSelector((state) => state.main.error);
-  const page = useAppSelector((state) => state.main.page);
+  const cats = useAppSelector(selectCats);
+  const loading = useAppSelector(selectLoading);
+  const error = useAppSelector(selectError);
+  const page = useAppSelector(selectPage);
 
   const [pathname] = useSearchParams();
 

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { getCategories } from "../../store/services/getCategories/getCategories";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import styles from "./Sidebar.module.scss";
+import { selectCategories } from "../../store/selectors/selectCategories";
 
 export const Sidebar = () => {
   const dispatch = useAppDispatch();
-  const categories = useAppSelector((state) => state.main.categories);
-
+  const categories = useAppSelector(selectCategories);
 
   useEffect(() => {
     dispatch(getCategories());
