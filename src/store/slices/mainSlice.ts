@@ -38,7 +38,7 @@ const mainSlice = createSlice({
     addCase(getCategories.pending, (state) => {
       state.loading = true;
     });
-    addCase(getCategories.rejected, (state, { payload }: { payload: any }) => {
+    addCase(getCategories.rejected, (state, { payload }: PayloadAction<any>) => {
       state.loading = false;
       state.error = payload;
     });
@@ -52,7 +52,7 @@ const mainSlice = createSlice({
     addCase(getCats.pending, (state) => {
       state.loading = true;
     });
-    addCase(getCats.rejected, (state, { payload }: { payload: any }) => {
+    addCase(getCats.rejected, (state, { payload }: PayloadAction<any>) => {
       state.loading = false;
       state.error = payload;
     });
